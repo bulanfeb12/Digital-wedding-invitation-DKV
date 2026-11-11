@@ -1,0 +1,298 @@
+/* ==========================================================================
+   EVERAFTER — LOTUS BOTANICAL ROMANCE
+   Responsive Design & Device Adaptations
+   ========================================================================== */
+
+/* Tablet & Smaller Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .section {
+    padding: 85px 0;
+  }
+
+  .couple-grid {
+    gap: 24px;
+  }
+
+  .portrait-arch-wrapper {
+    width: 190px;
+    height: 250px;
+  }
+
+  .countdown-number {
+    font-size: 3rem;
+  }
+
+  .wishes-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-script-subtitle {
+    font-size: 2.3rem;
+  }
+
+  /* 3D Envelope Mobile Adaptation */
+  .envelope-3d-container {
+    width: 320px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  .sliding-card {
+    height: 200px;
+    padding: 16px;
+  }
+
+  .card-monogram {
+    font-size: 2.2rem;
+  }
+
+  .card-names {
+    font-size: 1.25rem;
+  }
+
+  .sliding-card.pulled-out {
+    transform: translateY(-120px) scale(1.04);
+  }
+
+  .envelope-pocket-left {
+    border-width: 110px 0 110px 160px;
+  }
+
+  .envelope-pocket-right {
+    border-width: 110px 160px 110px 0;
+  }
+
+  .envelope-pocket-bottom {
+    border-width: 0 160px 120px 160px;
+  }
+
+  .envelope-flap {
+    border-width: 120px 160px 0 160px;
+  }
+
+  .wax-seal {
+    top: 95px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .wax-seal-inner {
+    width: 48px;
+    height: 48px;
+  }
+
+  .wax-seal-monogram {
+    font-size: 1rem;
+  }
+
+  /* Hero Adjustments */
+  .hero-card-arch {
+    padding: 45px 24px 35px;
+  }
+
+  .hero-couple-names {
+    font-size: 2.5rem;
+  }
+
+  .hero-couple-names .ampersand {
+    font-size: 2.8rem;
+  }
+
+  .hero-frame-flower {
+    width: 180px;
+    height: 180px;
+  }
+
+  /* Couple Profile Stack */
+  .couple-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 40px auto 0;
+  }
+
+  .couple-center-divider {
+    transform: rotate(0deg);
+    margin: 10px 0;
+  }
+
+  .center-ampersand {
+    font-size: 3.2rem;
+  }
+
+  /* Story Timeline Single-Sided for Mobile */
+  .story-timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 55px;
+    padding-right: 0;
+  }
+
+  .timeline-item:nth-child(even) {
+    margin-left: 0;
+    padding-left: 55px;
+  }
+
+  .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 8px;
+    right: auto;
+  }
+
+  .timeline-card::after,
+  .timeline-item:nth-child(even) .timeline-card::after {
+    left: -8px;
+    right: auto;
+    transform: rotate(-135deg);
+  }
+
+  /* Countdown Grid */
+  .countdown-box {
+    padding: 32px 18px;
+  }
+
+  .countdown-grid {
+    gap: 12px;
+  }
+
+  .countdown-number {
+    font-size: 2.3rem;
+  }
+
+  .countdown-label {
+    font-size: 0.72rem;
+  }
+
+  /* RSVP Form */
+  .rsvp-card {
+    padding: 36px 22px;
+  }
+
+  .radio-group-attendance {
+    grid-template-columns: 1fr;
+  }
+
+  /* Bottom Navigation Dock */
+  .bottom-nav-dock {
+    width: calc(100% - 24px);
+    max-width: 440px;
+    padding: 6px 10px;
+    gap: 6px;
+    justify-content: space-around;
+  }
+
+  .bottom-nav-link span {
+    display: none; /* Hide label on small mobile for clean icons */
+  }
+
+  .bottom-nav-link svg {
+    width: 22px;
+    height: 22px;
+    margin-bottom: 0;
+  }
+
+  .floating-audio-widget {
+    bottom: 74px;
+    right: 16px;
+  }
+
+  .audio-toggle-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .audio-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extra Small Mobile (max-width: 400px) */
+@media (max-width: 400px) {
+  .envelope-3d-container {
+    width: 280px;
+    height: 195px;
+  }
+
+  .envelope-pocket-left {
+    border-width: 100px 0 100px 140px;
+  }
+
+  .envelope-pocket-right {
+    border-width: 100px 140px 100px 0;
+  }
+
+  .envelope-pocket-bottom {
+    border-width: 0 140px 110px 140px;
+  }
+
+  .envelope-flap {
+    border-width: 110px 140px 0 140px;
+  }
+
+  .wax-seal {
+    top: 85px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .hero-couple-names {
+    font-size: 2.1rem;
+  }
+
+  .countdown-number {
+    font-size: 1.8rem;
+  }
+
+  .btn-digital-pass {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+
+  .digital-pass-card {
+    padding: 32px 18px;
+  }
+
+  .pass-qr-box {
+    width: 140px;
+    height: 140px;
+  }
+
+  .map-iframe-container {
+    height: 220px;
+  }
+}
+
+/* Touch-device hover state overrides & accessibility */
+@media (hover: none) and (pointer: coarse) {
+  .gallery-item-overlay {
+    opacity: 0.9;
+    background: linear-gradient(180deg, transparent 50%, rgba(42, 51, 29, 0.85) 100%);
+  }
+
+  .bottom-nav-link {
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .btn-primary, .btn-secondary, .btn-digital-pass, .btn-open-invitation {
+    min-height: 46px;
+  }
+}
+
+

@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>The Wedding of Clara & Brandon — Lotus Botanical Romance</title>
+  <meta name="description"
+    content="Exclusive Digital Wedding Invitation of Clara Aurelia & Brandon Alexander. Lotus Botanical Romance collection.">
+  <meta name="theme-color" content="#737C50">
+
+  <!-- Google Fonts Preconnect & Embed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="invitation-closed">
+
+  <!-- Fine Paper Texture Overlay -->
+  <div class="paper-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Floating Lotus Petals & Pollen Canvas -->
+  <canvas id="petalCanvas" aria-hidden="true"></canvas>
+
+  <!-- Reusable Botanical SVG Definitions -->
+  <svg class="svg-filter-defs" aria-hidden="true">
+    <defs>
+      <!-- Lotus Flower Symbol -->
+      <g id="lotus-flower-art">
+        <!-- Outer Leaves / Petals (Soft Pink to Lotus Pink) -->
+        <path d="M50 15 C30 35 15 65 35 88 C45 70 50 45 50 15 Z" fill="#F5C1D2" opacity="0.9" />
+        <path d="M50 15 C70 35 85 65 65 88 C55 70 50 45 50 15 Z" fill="#F5C1D2" opacity="0.9" />
+        <path d="M50 22 C36 45 28 72 45 92 C48 76 50 55 50 22 Z" fill="#E994B8" opacity="0.95" />
+        <path d="M50 22 C64 45 72 72 55 92 C52 76 50 55 50 22 Z" fill="#E994B8" opacity="0.95" />
+        <path d="M50 12 C42 38 42 68 50 90 C58 68 58 38 50 12 Z" fill="#F7AECB" />
+        <!-- Inner Petal Highlights -->
+        <path d="M50 30 C45 48 45 70 50 86 C55 70 55 48 50 30 Z" fill="#FDF3F6" opacity="0.8" />
+        <!-- Golden Center Lotus Stamen & Carpel -->
+        <ellipse cx="50" cy="85" rx="8" ry="4" fill="#C8B98E" />
+        <circle cx="47" cy="84" r="1" fill="#FFF2CE" />
+        <circle cx="50" cy="83" r="1.2" fill="#FFF2CE" />
+        <circle cx="53" cy="84" r="1" fill="#FFF2CE" />
+        <!-- Lotus Base Leaves (Moss Green) -->
+        <path d="M35 88 C20 92 10 82 2 85 C15 95 38 98 48 93 Z" fill="#737C50" opacity="0.85" />
+        <path d="M65 88 C80 92 90 82 98 85 C85 95 62 98 52 93 Z" fill="#737C50" opacity="0.85" />
+      </g>
+
+      <!-- Delicate Lotus Bud Symbol -->
+      <g id="lotus-bud-art">
+        <path d="M30 5 C15 25 15 50 30 70 C45 50 45 25 30 5 Z" fill="#F5C1D2" />
+        <path d="M30 12 C20 30 20 48 30 65 C40 48 40 30 30 12 Z" fill="#E994B8" />
+        <path d="M30 22 C26 35 26 48 30 60 C34 48 34 35 30 22 Z" fill="#FBF0F4" />
+        <!-- Calyx (Moss Green) -->
+        <path d="M18 55 C22 68 30 75 30 75 C30 75 38 68 42 55 C36 62 24 62 18 55 Z" fill="#737C50" />
+        <!-- Stem -->
+        <path d="M30 75 Q32 95 30 110" stroke="#737C50" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      </g>
+
+      <!-- Lotus Lily Pad Leaf Symbol -->
+      <g id="lotus-leaf-art">
+        <path d="M50 50 C20 20 5 60 25 85 C45 105 85 95 95 65 C100 40 75 15 50 50 Z" fill="#737C50" opacity="0.8" />
+        <!-- Veins -->
+        <path d="M50 50 L25 35 M50 50 L18 60 M50 50 L30 80 M50 50 L60 88 M50 50 L85 75 M50 50 L85 45 M50 50 L65 25"
+          stroke="#939D72" stroke-width="1.2" stroke-linecap="round" />
+        <circle cx="50" cy="50" r="3" fill="#C8B98E" />
+      </g>
+
+      <!-- Corner Botanical Filigree -->
+      <g id="corner-filigree">
+        <path d="M5 50 C5 25 25 5 50 5" stroke="#C8B98E" stroke-width="1.5" fill="none" />
+        <path d="M12 50 C12 29 29 12 50 12" stroke="#E994B8" stroke-width="1" fill="none" opacity="0.7" />
+        <circle cx="5" cy="5" r="3" fill="#C8B98E" />
+        <circle cx="50" cy="5" r="2" fill="#E994B8" />
+        <circle cx="5" cy="50" r="2" fill="#E994B8" />
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ==========================================================================
+       SECTION 0: OPENING COVER — PINK 3D ENVELOPE (MOSS GREEN BACKDROP)
+       ========================================================================== -->
+  <section id="openingCover" class="opening-cover-scene" aria-label="Cover Invitation">
+    <!-- Botanical Atmosphere Backdrop -->
+    <div class="botanical-backdrop" aria-hidden="true">
+      <svg class="backdrop-lotus top-left lotus-breathe" viewBox="0 0 100 100">
+        <use href="#lotus-flower-art" />
+      </svg>
+      <svg class="backdrop-lotus top-right floral-sway" viewBox="0 0 100 100">
+        <use href="#lotus-flower-art" />
+      </svg>
+      <svg class="backdrop-lotus bottom-left floral-sway" viewBox="0 0 100 100">
+        <use href="#lotus-leaf-art" />
+      </svg>
+      <svg class="backdrop-lotus bottom-right lotus-breathe" viewBox="0 0 100 100">
+        <use href="#lotus-flower-art" />
+      </svg>
+    </div>
+
+    <!-- 3D Envelope Component -->
+    <div class="envelope-3d-container" id="envelope3DContainer">
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        <!-- Envelope Back Face -->
+        <div class="envelope-back"></div>
+
+        <!-- Sliding Invitation Card -->
+        <div class="sliding-card" id="slidingCard">
+          <div class="card-mint-arch"></div>
+          <div class="card-monogram">C & B</div>
+          <div class="card-heading">The Wedding Celebration</div>
+          <div class="card-names">
+            Clara <span>&</span> Brandon
+          </div>
+          <div class="card-date">SABTU, 24 OKTOBER 2026</div>
+          <div class="botanical-divider" style="margin-top: 10px;">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-bud-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+
+        <!-- Envelope Front Pocket Folds -->
+        <div class="envelope-pocket">
+          <div class="envelope-pocket-left"></div>
+          <div class="envelope-pocket-right"></div>
+          <div class="envelope-pocket-bottom"></div>
+        </div>
+
+        <!-- Envelope 3D Folding Flap -->
+        <div class="envelope-flap" id="envelopeFlap"></div>
+
+        <!-- Delicate Lotus Sprigs Flanking the Seal -->
+        <div class="envelope-floral-accents" aria-hidden="true">
+          <svg class="floral-accent-sprig" viewBox="0 0 100 100">
+            <use href="#lotus-bud-art" />
+          </svg>
+          <svg class="floral-accent-sprig" style="transform: scaleX(-1);" viewBox="0 0 100 100">
+            <use href="#lotus-bud-art" />
+          </svg>
+        </div>
+
+        <!-- Embossed Botanical Wax Seal in Muted Gold -->
+        <div class="wax-seal" id="waxSeal" title="Klik untuk membuka undangan">
+          <div class="wax-seal-inner">
+            <span class="wax-seal-monogram">C&B</span>
+            <svg class="wax-seal-lotus-icon" viewBox="0 0 100 100">
+              <use href="#lotus-bud-art" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guest Personalization Tag & Open Invitation Button -->
+    <div class="cover-guest-plate">
+      <p class="guest-subtitle">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+      <h2 class="guest-name" id="envelopeGuestName">Tamu Undangan</h2>
+      <button type="button" class="btn-open-invitation" id="openInvitationBtn">
+        <span>Buka Undangan</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MAIN WEBSITE CONTAINER
+       ========================================================================== -->
+  <main id="mainWebsite" class="hidden">
+
+    <!-- ==========================================================================
+         1. HERO SECTION (BOTANICAL FRAMING & IVORY ARCH)
+         ========================================================================== -->
+    <section id="hero" class="hero-section section-ivory">
+      <!-- Botanical Floral Framing Corners -->
+      <div class="hero-botanical-frame" aria-hidden="true">
+        <svg class="hero-frame-flower hero-flower-tl lotus-breathe" viewBox="0 0 100 100">
+          <use href="#lotus-flower-art" />
+        </svg>
+        <svg class="hero-frame-flower hero-flower-tr floral-sway" viewBox="0 0 100 100">
+          <use href="#lotus-flower-art" />
+        </svg>
+        <svg class="hero-frame-flower hero-flower-bl floral-sway" viewBox="0 0 100 100">
+          <use href="#lotus-leaf-art" />
+        </svg>
+        <svg class="hero-frame-flower hero-flower-br lotus-breathe" viewBox="0 0 100 100">
+          <use href="#lotus-flower-art" />
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="hero-card-arch reveal-on-scroll">
+          <div class="hero-arch-inner-border"></div>
+
+          <span class="hero-welcome-badge">The Wedding Celebration</span>
+
+          <h1 class="hero-couple-names">
+            Clara <span class="ampersand">&</span> Brandon
+          </h1>
+
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+
+          <p class="section-lead" style="margin-top: 18px; font-style: italic;">
+            "Dua jiwa, satu takdir terindah, mekar abadi dalam berkah dan cinta."
+          </p>
+
+          <div class="hero-date-block">
+            <div class="hero-date-item">Sabtu</div>
+            <div class="hero-date-separator"></div>
+            <div class="hero-date-item">24 Oktober 2026</div>
+            <div class="hero-date-separator"></div>
+            <div class="hero-date-item">Jakarta</div>
+          </div>
+
+          <p class="hero-venue-teaser">
+            The Glasshouse Botanical Pavilion — Lotus Grand Boulevard
+          </p>
+
+          <button type="button" class="btn-digital-pass btn-open-pass" aria-label="Buka Digital Guest Pass">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Digital Guest Pass &amp; QR Check-In</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. COUPLE PROFILE SECTION (EDITORIAL PORTRAIT ARCHES)
+         ========================================================================== -->
+    <section id="couple" class="section section-ivory">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">The Happy Couple</span>
+          <h2 class="section-title">Mempelai Pengantin</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+          <p class="section-lead">
+            Dengan penuh rasa syukur dan sukacita atas anugerah Tuhan Yang Maha Esa, kami mempersembahkan kedua mempelai
+            yang mengikat janji suci:
+          </p>
+        </div>
+
+        <div class="couple-grid">
+          <!-- Bride Card -->
+          <div class="couple-card reveal-on-scroll delay-1">
+            <div class="portrait-arch-wrapper">
+              <img class="portrait-arch-img" src="assets/images/download (15).jpg" alt="Clara Aurelia Danuwidjaja"
+                loading="lazy">
+              <svg class="portrait-floral-badge" viewBox="0 0 100 100">
+                <use href="#lotus-flower-art" />
+              </svg>
+            </div>
+            <h3 class="couple-title-role">The Bride</h3>
+            <h4 class="couple-fullname">Clara Aurelia Danuwidjaja</h4>
+            <p class="couple-parents">
+              Putri tercinta dari keluarga:<br>
+              <strong>Bpk. Hendra Danuwidjaja</strong><br>&amp; <strong>Ibu Siska Febrianti</strong>
+            </p>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="couple-social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+              <span>@clara.danuwidjaja</span>
+            </a>
+          </div>
+
+          <!-- Center Ornamental Ampersand -->
+          <div class="couple-center-divider reveal-on-scroll delay-2">
+            <svg width="45" height="45" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <span class="center-ampersand">&amp;</span>
+            <svg width="45" height="45" viewBox="0 0 100 100">
+              <use href="#lotus-bud-art" />
+            </svg>
+          </div>
+
+          <!-- Groom Card -->
+          <div class="couple-card reveal-on-scroll delay-3">
+            <div class="portrait-arch-wrapper">
+              <img class="portrait-arch-img" src="assets/images/download (17).jpg" alt="Brandon Alexander Halim"
+                loading="lazy">
+              <svg class="portrait-floral-badge" viewBox="0 0 100 100">
+                <use href="#lotus-bud-art" />
+              </svg>
+            </div>
+            <h3 class="couple-title-role">The Groom</h3>
+            <h4 class="couple-fullname">Brandon Alexander Halim</h4>
+            <p class="couple-parents">
+              Putra tercinta dari keluarga:<br>
+              <strong>Bpk. Robert Halim</strong><br>&amp; <strong>Ibu Linda Suryani</strong>
+            </p>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="couple-social-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+              <span>@brandon.halim</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. LOVE STORY SECTION (BOTANICAL TIMELINE)
+         ========================================================================== -->
+    <section id="story" class="section section-mint">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">Our Journey</span>
+          <h2 class="section-title">Kisah Cinta Kami</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+          <p class="section-lead">
+            Setiap kisah cinta itu indah, namun kisah yang kami rajut bersama adalah mahakarya yang paling kami syukuri.
+          </p>
+        </div>
+
+        <div class="story-timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-year">MARET 2020</div>
+              <h4 class="timeline-title">Pertemuan Pertama</h4>
+              <p class="timeline-desc">
+                Berawal dari pertemuan tak sengaja di sebuah pameran seni botani kontemporer di Jakarta. Percakapan
+                hangat tentang karya seni dan secangkir teh mengawali lembaran kisah kami.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item reveal-on-scroll delay-1">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-year">AGUSTUS 2022</div>
+              <h4 class="timeline-title">Mekar Dalam Kebersamaan</h4>
+              <p class="timeline-desc">
+                Melewati berbagai musim kehidupan, saling mendampingi dalam suka maupun duka. Kami menyadari bahwa rumah
+                sejati bukanlah sebuah tempat, melainkan saat kami bersama.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item reveal-on-scroll delay-2">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-year">DESEMBER 2024</div>
+              <h4 class="timeline-title">Lamaran di Tepi Danau Teratai</h4>
+              <p class="timeline-desc">
+                Di bawah temaram senja di tepi danau teratai Ubud, Brandon berlutut dan mengutarakan ketulusan hatinya.
+                Dengan mata berbinar dan rasa haru, Clara menjawab "Ya!".
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item reveal-on-scroll delay-3">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-year">OKTOBER 2026</div>
+              <h4 class="timeline-title">Hari Bahagia Kita</h4>
+              <p class="timeline-desc">
+                Mengikat janji suci di hadapan Tuhan, keluarga, dan para sahabat terkasih untuk mengarungi bahtera rumah
+                tangga hingga akhir hayat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. EVENT DETAILS SECTION (IVORY INVITATION CARDS & MINT ARCHES)
+         ========================================================================== -->
+    <section id="events" class="section section-ivory">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">Wedding Events</span>
+          <h2 class="section-title">Waktu &amp; Tempat</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+          <p class="section-lead">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan
+            memberikan doa restu.
+          </p>
+        </div>
+
+        <div class="events-grid">
+          <!-- Event 1: Pemberkatan / Akad Nikah -->
+          <div class="event-stationery-card reveal-on-scroll delay-1">
+            <div class="event-mint-arch-bg"></div>
+            <div class="event-card-content">
+              <span class="event-badge">Holy Matrimony</span>
+              <h3 class="event-name">Pemberkatan Nikah</h3>
+
+              <div class="event-info-group">
+                <div class="event-date-large">SABTU, 24 OKTOBER 2026</div>
+                <div class="event-time">Pukul 09.00 - 11.00 WIB</div>
+              </div>
+
+              <div class="event-info-group">
+                <div class="event-venue-name">The Glasshouse Botanical Pavilion</div>
+                <div class="event-venue-address">
+                  Jl. Lotus Grand Boulevard No. 8, Senayan Botanical Park, Jakarta Selatan
+                </div>
+                <div class="event-dresscode">Dress Code: Pastel Botanical / Warm Earthy</div>
+              </div>
+            </div>
+
+            <div class="event-actions">
+              <button type="button" class="btn-secondary btn-open-map-modal" aria-label="Buka Peta Interaktif">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Buka Peta Interaktif</span>
+              </button>
+              <button type="button" class="btn-primary" id="addToGCalBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Simpan ke Google Calendar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Event 2: Resepsi Pernikahan -->
+          <div class="event-stationery-card reveal-on-scroll delay-2">
+            <div class="event-mint-arch-bg"></div>
+            <div class="event-card-content">
+              <span class="event-badge">Wedding Reception</span>
+              <h3 class="event-name">Resepsi Pernikahan</h3>
+
+              <div class="event-info-group">
+                <div class="event-date-large">SABTU, 24 OKTOBER 2026</div>
+                <div class="event-time">Pukul 18.30 - 21.30 WIB</div>
+              </div>
+
+              <div class="event-info-group">
+                <div class="event-venue-name">The Grand Lotus Ballroom</div>
+                <div class="event-venue-address">
+                  Jl. Lotus Grand Boulevard No. 8, Senayan Botanical Park, Jakarta Selatan
+                </div>
+                <div class="event-dresscode">Dress Code: Formal Elegant Pastel / Moss &amp; Rose</div>
+              </div>
+            </div>
+
+            <div class="event-actions">
+              <button type="button" class="btn-secondary btn-open-map-modal" aria-label="Buka Peta Interaktif">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Buka Peta Interaktif</span>
+              </button>
+              <button type="button" class="btn-primary" id="downloadIcsBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Unduh File Kalender (.ICS)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Dress Code Palette Card -->
+        <div class="dresscode-palette-card reveal-on-scroll">
+          <h4 style="font-family: var(--font-serif-heading); font-size: 1.5rem; color: var(--moss-green-dark); letter-spacing: 1px;">
+            Palet Busana Tamu Undangan
+          </h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 580px; margin: 6px auto 0;">
+            Sentuh lingkaran warna untuk melihat rekomendasi paduan busana bertema <em>Lotus Botanical Romance</em>:
+          </p>
+
+          <div class="swatch-group">
+            <div class="swatch-item">
+              <div class="swatch-circle" style="background-color: #737C50;" data-color-name="Moss Green" data-color-tip="Hijau lumut botani alami, cocok untuk jas pria, celana chino, atau gaun elegan."></div>
+              <span class="swatch-name">Moss Green</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-circle" style="background-color: #E994B8;" data-color-name="Lotus Pink" data-color-tip="Merah muda teratai cerah, aksen cantik untuk dress, hijab, dasi, atau selendang."></div>
+              <span class="swatch-name">Lotus Pink</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-circle" style="background-color: #F5C1D2;" data-color-name="Soft Pink" data-color-tip="Merah muda pastel lembut bernuansa romantis dan anggun."></div>
+              <span class="swatch-name">Soft Pink</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-circle" style="background-color: #DCEBE0;" data-color-name="Mint Pastel" data-color-tip="Hijau mint sejuk yang sangat segar dan memancarkan kehangatan taman botani."></div>
+              <span class="swatch-name">Mint Pastel</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-circle" style="background-color: #F7F2E8;" data-color-name="Warm Ivory" data-color-tip="Gading hangat klasik, nuansa kemeja dan gaun tradisional yang santun."></div>
+              <span class="swatch-name">Warm Ivory</span>
+            </div>
+            <div class="swatch-item">
+              <div class="swatch-circle" style="background-color: #C8B98E;" data-color-name="Muted Gold" data-color-tip="Emas lembut teduh yang memberikan sentuhan mewah namun bersahaja."></div>
+              <span class="swatch-name">Muted Gold</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. COUNTDOWN SECTION (TEXTURED MOSS GREEN BACKGROUND)
+         ========================================================================== -->
+    <section id="countdown" class="section section-moss">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">Counting Down to Forever</span>
+          <h2 class="section-title">Menghitung Hari Bahagia</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"
+              style="background: linear-gradient(90deg, transparent, var(--soft-pink), transparent);"></div>
+            <svg class="divider-icon" style="fill: var(--soft-pink);" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"
+              style="background: linear-gradient(90deg, transparent, var(--soft-pink), transparent);"></div>
+          </div>
+          <p class="section-lead">
+            Menuju detik-detik sakral ketika dua insan dan dua keluarga dipersatukan dalam cinta yang abadi.
+          </p>
+        </div>
+
+        <div class="countdown-box reveal-scale">
+          <div class="countdown-grid">
+            <div class="countdown-unit">
+              <div class="countdown-number" id="cdDays">00</div>
+              <div class="countdown-label">Hari</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number" id="cdHours">00</div>
+              <div class="countdown-label">Jam</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number" id="cdMinutes">00</div>
+              <div class="countdown-label">Menit</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-number" id="cdSeconds">00</div>
+              <div class="countdown-label">Detik</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. GALLERY SECTION (ROMANTIC FLORAL EDITORIAL)
+         ========================================================================== -->
+    <section id="gallery" class="section section-ivory">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">Moments of Us</span>
+          <h2 class="section-title">Galeri Kebersamaan</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+          <p class="section-lead">
+            Setiap potret mengabadikan sejuta kenangan manis yang membawa kami ke gerbang pernikahan ini.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="gallery-filters reveal-on-scroll">
+          <button type="button" class="gallery-filter-btn active" data-filter="all">Semua Momen</button>
+          <button type="button" class="gallery-filter-btn" data-filter="prewedding">Pre-Wedding</button>
+          <button type="button" class="gallery-filter-btn" data-filter="engagement">Engagement</button>
+          <button type="button" class="gallery-filter-btn" data-filter="casual">Memories</button>
+        </div>
+
+        <!-- Gallery Editorial Grid -->
+        <div class="gallery-grid">
+          <!-- Item 1 -->
+          <div class="gallery-item reveal-on-scroll delay-1" data-category="prewedding">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+              alt="Eternal Romance" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-overlay-tag">Pre-Wedding</span>
+              <h4 class="gallery-overlay-title">Eternal Botanical Vows</h4>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-item reveal-on-scroll delay-2" data-category="engagement">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80"
+              alt="Golden Sunset Smile" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-overlay-tag">Engagement</span>
+              <h4 class="gallery-overlay-title">Golden Sunset Promise</h4>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-item reveal-on-scroll delay-3" data-category="prewedding">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+              alt="Whispering Winds" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-overlay-tag">Pre-Wedding</span>
+              <h4 class="gallery-overlay-title">In Your Warm Embrace</h4>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-item reveal-on-scroll delay-1" data-category="casual">
+            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80"
+              alt="Laughter & Joy" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-overlay-tag">Memories</span>
+              <h4 class="gallery-overlay-title">Unconditional Joy</h4>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-item reveal-on-scroll delay-2" data-category="engagement">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80"
+              alt="The Sacred Ring" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-overlay-tag">Engagement</span>
+              <h4 class="gallery-overlay-title">A Token of Forever</h4>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="gallery-item reveal-on-scroll delay-3" data-category="casual">
+            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80"
+              alt="By the Lotus Waters" loading="lazy">
+            <div class="gallery-item-overlay">
+              <span class="gallery-overlay-tag">Memories</span>
+              <h4 class="gallery-overlay-title">Serenity by the Lake</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal Component -->
+    <div id="galleryLightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Lihat Foto Galeri">
+      <button type="button" class="lightbox-close-btn" id="lightboxClose" aria-label="Tutup">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <button type="button" class="lightbox-nav-btn lightbox-prev-btn" id="lightboxPrev" aria-label="Sebelumnya">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button type="button" class="lightbox-nav-btn lightbox-next-btn" id="lightboxNext" aria-label="Selanjutnya">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+      <div class="lightbox-content-box">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="Galeri Pernikahan">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         7. RSVP SECTION (IVORY FORM & LOTUS PINK BUTTONS)
+         ========================================================================== -->
+    <section id="rsvp" class="section section-mint">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">Kindly Respond</span>
+          <h2 class="section-title">Konfirmasi Kehadiran</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+          <p class="section-lead">
+            Mohon konfirmasikan kehadiran Bapak/Ibu/Saudara/i sebelum tanggal 10 Oktober 2026 demi kenyamanan resepsi
+            bersama.
+          </p>
+        </div>
+
+        <div class="rsvp-card reveal-on-scroll">
+          <form id="rsvpForm">
+            <div class="form-group">
+              <label for="rsvpName" class="form-label">Nama Lengkap</label>
+              <input type="text" id="rsvpName" class="form-input" placeholder="Masukkan nama Anda" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Konfirmasi Kehadiran</label>
+              <div class="radio-group-attendance">
+                <label class="radio-label-card selected">
+                  <input type="radio" name="attendance" value="Hadir" checked style="display:none;">
+                  <span class="radio-custom"></span>
+                  <span>Saya Akan Hadir</span>
+                </label>
+                <label class="radio-label-card">
+                  <input type="radio" name="attendance" value="Tidak Hadir" style="display:none;">
+                  <span class="radio-custom"></span>
+                  <span>Maaf, Belum Bisa Hadir</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvpGuests" class="form-label">Jumlah Tamu</label>
+              <div class="rsvp-stepper-box">
+                <button type="button" class="stepper-btn" id="btnGuestsMinus" aria-label="Kurangi Tamu">-</button>
+                <span class="stepper-display" id="guestsDisplayVal">2 Orang</span>
+                <button type="button" class="stepper-btn" id="btnGuestsPlus" aria-label="Tambah Tamu">+</button>
+                <select id="rsvpGuests" class="form-select" style="display: none;">
+                  <option value="1">1 Orang</option>
+                  <option value="2" selected>2 Orang</option>
+                  <option value="3">3 Orang</option>
+                  <option value="4">4 Orang</option>
+                  <option value="5">5 Orang</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvpNotes" class="form-label">Pesan Khusus / Preferensi Makanan (Opsional)</label>
+              <textarea id="rsvpNotes" class="form-textarea" rows="3"
+                placeholder="Contoh: Vegetarian, Tanpa Kacang, dll."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; font-size: 1rem;">
+              <span>Kirim Konfirmasi Kehadiran</span>
+            </button>
+
+            <!-- Success Feedback Banner -->
+            <div id="rsvpFeedback" class="rsvp-feedback-success hidden">
+              <p style="font-weight: 600; color: var(--moss-green-dark); font-size: 1.1rem; margin-bottom: 4px;">
+                Terima Kasih Atas Konfirmasinya!
+              </p>
+              <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                Kehadiran dan doa restu Anda sangat berarti bagi kami. Sampai jumpa di hari bahagia kami!
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. GUESTBOOK / WISHES SECTION (PASTEL MESSAGE CARDS)
+         ========================================================================== -->
+    <section id="guestbook" class="section section-ivory">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">Words of Love</span>
+          <h2 class="section-title">Buku Tamu &amp; Doa Restu</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+          <p class="section-lead">
+            Tinggalkan pesan hangat, untaian doa, dan ucapan selamat untuk Clara &amp; Brandon.
+          </p>
+        </div>
+
+        <div class="wishes-layout">
+          <!-- Submission Form -->
+          <div class="rsvp-card reveal-on-scroll">
+            <h3
+              style="font-family: var(--font-serif-heading); font-size: 1.5rem; margin-bottom: 20px; color: var(--moss-green-dark);">
+              Kirim Ucapan &amp; Doa
+            </h3>
+            <form id="guestbookForm">
+              <div class="form-group">
+                <label for="wishName" class="form-label">Nama Anda</label>
+                <input type="text" id="wishName" class="form-input" placeholder="Masukkan nama Anda" required>
+              </div>
+
+              <div class="form-group">
+                <label for="wishStatus" class="form-label">Kehadiran</label>
+                <select id="wishStatus" class="form-select">
+                  <option value="Hadir">Hadir</option>
+                  <option value="Hadir Bersama Pasangan">Hadir Bersama Pasangan</option>
+                  <option value="Berhalangan Hadir">Berhalangan Hadir</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="wishMessage" class="form-label">Pesan Doa Restu</label>
+                <textarea id="wishMessage" class="form-textarea" rows="4"
+                  placeholder="Tuliskan doa dan harapan terbaik Anda..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; padding: 14px;">
+                <span>Kirim Doa Restu</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Wishes Stream -->
+          <div class="wishes-feed reveal-on-scroll delay-1" id="wishesList">
+            <!-- Dynamically populated by js/main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. WEDDING GIFT SECTION (STATIONERY ACCOUNT CARDS)
+         ========================================================================== -->
+    <section id="gift" class="section section-mint">
+      <div class="container container-narrow">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-script-subtitle">Wedding Gift</span>
+          <h2 class="section-title">Tanda Kasih</h2>
+          <div class="botanical-divider">
+            <div class="divider-line"></div>
+            <svg class="divider-icon" viewBox="0 0 100 100">
+              <use href="#lotus-flower-art" />
+            </svg>
+            <div class="divider-line"></div>
+          </div>
+          <p class="section-lead">
+            Doa restu Anda merupakan karunia terindah bagi kami. Namun jika Anda bermaksud memberikan tanda kasih berupa
+            bingkisan digital atau kado fisik, kami sertakan informasi berikut:
+          </p>
+        </div>
+
+        <!-- Interactive Gift Navigation Tabs -->
+        <div class="gift-tabs-nav reveal-on-scroll">
+          <button type="button" class="gift-tab-btn active" data-tab-target="tabBank">Rekening Bank</button>
+          <button type="button" class="gift-tab-btn" data-tab-target="tabQRIS">QRIS / E-Wallet</button>
+          <button type="button" class="gift-tab-btn" data-tab-target="tabKado">Kirim Kado Fisik</button>
+        </div>
+
+        <!-- Tab 1: Bank Accounts -->
+        <div id="tabBank" class="gift-tab-pane active">
+          <div class="gift-cards-grid">
+            <!-- Bank BCA Card -->
+            <div class="gift-account-card reveal-on-scroll delay-1">
+              <div class="gift-card-mint-top"></div>
+              <h4 class="bank-logo-title">BANK BCA</h4>
+              <p class="account-holder">a.n. <strong>Clara Aurelia Danuwidjaja</strong></p>
+              <div class="account-number-display">8285 1928 34</div>
+              <button type="button" class="btn-secondary copy-trigger-btn" data-copy-text="8285192834"
+                style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Salin Nomor Rekening</span>
+              </button>
+            </div>
+
+            <!-- Bank Mandiri Card -->
+            <div class="gift-account-card reveal-on-scroll delay-2">
+              <div class="gift-card-mint-top"></div>
+              <h4 class="bank-logo-title">BANK MANDIRI</h4>
+              <p class="account-holder">a.n. <strong>Brandon Alexander Halim</strong></p>
+              <div class="account-number-display">1370 0291 8492</div>
+              <button type="button" class="btn-secondary copy-trigger-btn" data-copy-text="137002918492"
+                style="width: 100%;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Salin Nomor Rekening</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: QRIS / E-Wallet -->
+        <div id="tabQRIS" class="gift-tab-pane">
+          <div class="qris-card reveal-on-scroll">
+            <h4 class="bank-logo-title">QRIS PERNIKAHAN</h4>
+            <p class="account-holder">Gopay / OVO / Dana / ShopeePay / BCA Mobile</p>
+            <div class="qris-image-wrapper">
+              <!-- Crisp Vector SVG QR Code -->
+              <svg viewBox="0 0 120 120" width="160" height="160">
+                <rect width="120" height="120" fill="white" />
+                <!-- Corner 1 -->
+                <rect x="10" y="10" width="30" height="30" fill="#2C3520" rx="4" />
+                <rect x="16" y="16" width="18" height="18" fill="white" rx="2" />
+                <rect x="20" y="20" width="10" height="10" fill="#737C50" rx="1" />
+                <!-- Corner 2 -->
+                <rect x="80" y="10" width="30" height="30" fill="#2C3520" rx="4" />
+                <rect x="86" y="16" width="18" height="18" fill="white" rx="2" />
+                <rect x="90" y="20" width="10" height="10" fill="#737C50" rx="1" />
+                <!-- Corner 3 -->
+                <rect x="10" y="80" width="30" height="30" fill="#2C3520" rx="4" />
+                <rect x="16" y="86" width="18" height="18" fill="white" rx="2" />
+                <rect x="20" y="90" width="10" height="10" fill="#737C50" rx="1" />
+                <!-- QR Dots -->
+                <rect x="50" y="15" width="8" height="8" fill="#2C3520" />
+                <rect x="62" y="25" width="8" height="8" fill="#2C3520" />
+                <rect x="50" y="35" width="8" height="8" fill="#E994B8" />
+                <rect x="25" y="50" width="8" height="8" fill="#2C3520" />
+                <rect x="40" y="50" width="14" height="14" fill="#737C50" />
+                <rect x="60" y="50" width="8" height="8" fill="#2C3520" />
+                <rect x="75" y="50" width="10" height="10" fill="#E994B8" />
+                <rect x="90" y="50" width="8" height="8" fill="#2C3520" />
+                <rect x="50" y="70" width="10" height="10" fill="#737C50" />
+                <rect x="70" y="75" width="12" height="12" fill="#2C3520" />
+                <rect x="50" y="90" width="8" height="8" fill="#2C3520" />
+                <rect x="65" y="95" width="14" height="14" fill="#737C50" />
+                <rect x="85" y="85" width="12" height="12" fill="#E994B8" />
+                <rect x="100" y="95" width="8" height="8" fill="#2C3520" />
+              </svg>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Pindai (*scan*) kode QR di atas menggunakan aplikasi perbankan atau dompet digital Anda.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 3: Physical Gift Address -->
+        <div id="tabKado" class="gift-tab-pane">
+          <div class="gift-account-card reveal-on-scroll">
+            <div class="gift-card-mint-top"></div>
+            <h4 class="bank-logo-title" style="font-size: 1.3rem;">KIRIM KADO FISIK</h4>
+            <p class="account-holder">Kediaman Mempelai (Clara &amp; Brandon)</p>
+            <div class="account-number-display" style="font-size: 1.05rem; letter-spacing: 0.5px; line-height: 1.5;">
+              The Sanctuary Residence, Cluster Lotus Pavillion Blok B No. 12, Cilandak, Jakarta Selatan, 12430
+            </div>
+            <button type="button" class="btn-secondary copy-trigger-btn"
+              data-copy-text="The Sanctuary Residence, Cluster Lotus Pavillion Blok B No. 12, Cilandak, Jakarta Selatan, 12430"
+              style="max-width: 320px; margin: 0 auto; display: flex;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Salin Alamat Lengkap</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- WhatsApp Confirmation Button -->
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="https://api.whatsapp.com/send?text=Halo%20Clara%20%26%20Brandon%2C%20saya%20sudah%20mengirimkan%20tanda%20kasih%20untuk%20pernikahan%20kalian.%20Selamat%20berbahagia%21" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-confirm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.995.543 1.954.833 2.796.833 3.181 0 5.767-2.586 5.767-5.766.001-3.18-2.585-5.766-5.767-5.766zm9.969 5.766c0 5.485-4.484 9.969-9.969 9.969-1.748 0-3.385-.453-4.81-1.246l-7.221 1.891 1.932-7.054c-.9-1.492-1.42-3.238-1.42-5.109 0-5.485 4.484-9.969 9.969-9.969 5.485 0 9.969 4.484 9.969 9.969z"/>
+            </svg>
+            <span>Konfirmasi Kirim Tanda Kasih via WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         10. CLOSING SECTION (MOSS GREEN WITH PINK LOTUS FLORAL ACCENTS)
+         ========================================================================== -->
+    <section id="closing" class="closing-section">
+      <div class="container container-narrow">
+        <svg class="closing-lotus-hero lotus-breathe" viewBox="0 0 100 100">
+          <use href="#lotus-flower-art" />
+        </svg>
+
+        <p class="closing-quote reveal-on-scroll">
+          "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+          agar kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+        </p>
+
+        <div class="botanical-divider" style="margin-bottom: 30px;">
+          <div class="divider-line"
+            style="background: linear-gradient(90deg, transparent, var(--soft-pink), transparent);"></div>
+          <svg class="divider-icon" style="fill: var(--soft-pink);" viewBox="0 0 100 100">
+            <use href="#lotus-bud-art" />
+          </svg>
+          <div class="divider-line"
+            style="background: linear-gradient(90deg, transparent, var(--soft-pink), transparent);"></div>
+        </div>
+
+        <p class="closing-gratitude reveal-on-scroll delay-1">
+          Merupakan sebuah kebahagiaan tak terhingga bagi kami sekeluarga atas kehadiran, doa restu yang tulus, dan
+          kasih sayang yang telah Anda limpahkan kepada kami.
+        </p>
+
+        <p
+          style="font-family: var(--font-sans); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; color: var(--soft-pink); margin-bottom: 8px;">
+          Kami Yang Berbahagia,
+        </p>
+
+        <h3 class="closing-couple-names reveal-on-scroll delay-2">
+          Clara &amp; Brandon
+        </h3>
+
+        <div class="footer-credits">
+          EVERAFTER 3D DIGITAL WEDDING INVITATION — LOTUS BOTANICAL ROMANCE COLLECTION &copy; 2026
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Background Wedding Music Element (Ganti src ke file MP3 pilihan Anda) -->
+  <audio id="weddingMusic" loop preload="auto"
+    src="assets/audio/Nadin Amizah - Kekal (Official Lyric Video).mp3"></audio>
+
+  <!-- ==========================================================================
+       FLOATING AUDIO WIDGET
+       ========================================================================== -->
+  <div class="floating-audio-widget">
+    <button type="button" class="audio-toggle-btn" id="audioToggleBtn" aria-label="Toggle Romantic Music"
+      onclick="window.romanticAudio.toggle()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18V5l12-2v13"></path>
+        <circle cx="6" cy="18" r="3"></circle>
+        <circle cx="18" cy="16" r="3"></circle>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ==========================================================================
+       BOTTOM NAVIGATION DOCK
+       ========================================================================== -->
+  <nav class="bottom-nav-dock" aria-label="Navigasi Menu Undangan">
+    <a href="#hero" class="bottom-nav-link active" title="Beranda">
+      <svg viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#couple" class="bottom-nav-link" title="Mempelai">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+      </svg>
+      <span>Mempelai</span>
+    </a>
+    <a href="#story" class="bottom-nav-link" title="Kisah Cinta">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+      </svg>
+      <span>Cerita</span>
+    </a>
+    <a href="#events" class="bottom-nav-link" title="Acara">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
+      </svg>
+      <span>Acara</span>
+    </a>
+    <a href="#gallery" class="bottom-nav-link" title="Galeri">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+      </svg>
+      <span>Galeri</span>
+    </a>
+    <a href="#rsvp" class="bottom-nav-link" title="RSVP">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+      </svg>
+      <span>RSVP</span>
+    </a>
+    <a href="#guestbook" class="bottom-nav-link" title="Ucapan">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+      </svg>
+      <span>Ucapan</span>
+    </a>
+    <a href="#gift" class="bottom-nav-link" title="Kado">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76V14h2V8.76L15.38 12 17 10.83 14.92 8H20v6z" />
+      </svg>
+      <span>Kado</span>
+    </a>
+  </nav>
+
+  <!-- ==========================================================================
+       MODAL 1: DIGITAL GUEST PASS & QR CODE
+       ========================================================================== -->
+  <div id="digitalPassModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Digital Guest Pass">
+    <div class="digital-pass-card">
+      <button type="button" class="modal-close-circle" id="passModalClose" aria-label="Tutup Pass">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="pass-monogram">C &amp; B</div>
+      <div style="font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted-gold-dark); margin-bottom: 8px;">
+        Exclusive Wedding Guest Pass
+      </div>
+      <h3 style="font-family: var(--font-serif-title); font-size: 1.6rem; color: var(--text-primary); margin-bottom: 4px;" class="dynamic-guest-name">
+        Tamu Undangan
+      </h3>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
+        The Glasshouse Botanical Pavilion — Jakarta
+      </p>
+
+      <div class="pass-qr-box">
+        <svg viewBox="0 0 120 120">
+          <rect width="120" height="120" fill="white" />
+          <rect x="8" y="8" width="34" height="34" fill="#2C3520" rx="3" />
+          <rect x="14" y="14" width="22" height="22" fill="white" rx="2" />
+          <rect x="18" y="18" width="14" height="14" fill="#E994B8" rx="1" />
+          <rect x="78" y="8" width="34" height="34" fill="#2C3520" rx="3" />
+          <rect x="84" y="14" width="22" height="22" fill="white" rx="2" />
+          <rect x="88" y="18" width="14" height="14" fill="#737C50" rx="1" />
+          <rect x="8" y="78" width="34" height="34" fill="#2C3520" rx="3" />
+          <rect x="14" y="84" width="22" height="22" fill="white" rx="2" />
+          <rect x="18" y="88" width="14" height="14" fill="#737C50" rx="1" />
+          <rect x="52" y="16" width="14" height="14" fill="#2C3520" />
+          <rect x="52" y="38" width="14" height="14" fill="#E994B8" />
+          <rect x="25" y="52" width="12" height="12" fill="#737C50" />
+          <rect x="46" y="52" width="28" height="16" fill="#2C3520" />
+          <rect x="82" y="52" width="16" height="16" fill="#E994B8" />
+          <rect x="52" y="76" width="14" height="14" fill="#737C50" />
+          <rect x="76" y="76" width="14" height="14" fill="#2C3520" />
+          <rect x="98" y="76" width="14" height="14" fill="#2C3520" />
+          <rect x="52" y="98" width="26" height="14" fill="#2C3520" />
+          <rect x="86" y="98" width="26" height="14" fill="#737C50" />
+        </svg>
+      </div>
+
+      <div class="pass-code-pill">
+        TABLE LOTUS 08
+      </div>
+
+      <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+        ID: EVR-2026-LOTUS-77 • Tunjukkan QR ini pada meja registrasi
+      </p>
+
+      <button type="button" class="btn-primary" id="btnSavePass" style="margin-top: 18px; width: 100%; padding: 12px;">
+        <span>Simpan Pass / Screenshot</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: INTERACTIVE GOOGLE MAPS
+       ========================================================================== -->
+  <div id="mapModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Peta Lokasi Acara">
+    <div class="map-card-modal">
+      <button type="button" class="modal-close-circle" id="mapModalClose" aria-label="Tutup Peta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <h3 style="font-family: var(--font-serif-title); font-size: 1.8rem; color: var(--text-primary); margin-bottom: 4px;">
+        Peta Lokasi Pernikahan
+      </h3>
+      <p style="font-size: 0.95rem; color: var(--text-secondary);">
+        The Glasshouse Botanical Pavilion, Senayan, Jakarta Selatan
+      </p>
+
+      <div class="map-iframe-container">
+        <!-- Interactive OpenStreetMap / Google Embed -->
+        <iframe title="Peta Lokasi Acara" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.297435165992!2d106.79979391476915!3d-6.224458395494246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14f55395641%3A0x6b30f368f5c40461!2sGelora%20Bung%20Karno%20Stadium!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" loading="lazy" allowfullscreen></iframe>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://maps.google.com/?q=Senayan+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 10px 22px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Buka di Google Maps</span>
+        </a>
+        <a href="https://waze.com/ul?q=Senayan+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 10px 22px;">
+          <span>Buka di Waze</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Modules -->
+  <script src="js/audio.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/envelope3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

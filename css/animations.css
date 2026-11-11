@@ -1,0 +1,129 @@
+/* ==========================================================================
+   EVERAFTER — LOTUS BOTANICAL ROMANCE
+   Keyframes, 3D Envelope Physics & Scroll Animations
+   ========================================================================== */
+
+/* Envelope 3D Container Dynamics */
+.envelope-3d-container {
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+}
+
+/* Gold Sparkle Burst Particle (Wax Seal Break) */
+.gold-sparkle-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFF2CE 0%, var(--muted-gold) 60%, var(--muted-gold-dark) 100%);
+  box-shadow: 0 0 8px #FFEA9F;
+  pointer-events: none;
+  z-index: 50;
+  animation: sparkleBurst 0.75s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes sparkleBurst {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Gentle Breathing Animation for Lotus Illustrations */
+@keyframes lotusBreathe {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.03) rotate(1.2deg);
+  }
+}
+
+.lotus-breathe {
+  animation: lotusBreathe 7s ease-in-out infinite;
+}
+
+/* Gentle Floating Sway for Arch Accents */
+@keyframes floralSway {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1.5deg);
+  }
+}
+
+.floral-sway {
+  animation: floralSway 5s ease-in-out infinite;
+}
+
+/* Subtle Shimmer for Muted Gold Details */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(90deg, var(--muted-gold) 0%, #FFF5D6 50%, var(--muted-gold) 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShimmer 6s linear infinite;
+}
+
+/* Scroll Reveal States (Intersection Observer) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays for Grid Elements */
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+.delay-4 { transition-delay: 0.48s; }
+
+/* Scale Up Reveal for Cards */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Subtle Pulsing for Wedding Ring / Seal Icon */
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(233, 148, 184, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(233, 148, 184, 0);
+  }
+}
+
+.pulse-target {
+  animation: subtlePulse 3s infinite;
+}
+

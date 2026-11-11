@@ -1,0 +1,15 @@
+PETUNJUK MENGGANTI LAGU / MUSIK PERNIKAHAN:
+
+1. Siapkan file musik pilihan Anda dalam format .mp3 (misalnya: lagu romantis, instrumen piano/akustik).
+2. Simpan atau copy file lagu tersebut ke dalam folder ini (assets/audio/).
+3. Beri nama file tersebut:
+   song.mp3
+   (Path lengkap: assets/audio/song.mp3)
+
+4. Jika nama file Anda berbeda (misalnya: "my-wedding-song.mp3"), buka file index.html pada baris:
+   <audio id="weddingMusic" loop preload="auto" src="assets/audio/song.mp3"></audio>
+   Lalu ganti tulisan "song.mp3" sesuai dengan nama file lagu Anda.
+
+5. Selesai! Saat amplop undangan dibuka, lagu tersebut akan otomatis berputar berulang (loop).
+   Jika tidak ada file MP3 yang dimasukkan, sistem akan otomatis memainkan alunan harpa romantis bawaan.
+
